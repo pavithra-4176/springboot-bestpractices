@@ -223,9 +223,7 @@ Circuit Breaker (Resilience4j/Hystrix) – for fault tolerance.
  
 ---
  
-Would you like me to show a Spring Boot architecture diagram for better visualization?
-Sriganesh Sureshkumar
-Software Engineer
+
  
 Spring Boot REST APIs and Endpoints
  
