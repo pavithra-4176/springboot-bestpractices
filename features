@@ -1,0 +1,92 @@
+🌱 What is Spring Boot?
+         Spring Boot is built on top of the Spring Framework, which is a comprehensive programming and configuration model for modern Java-based enterprise applications.
+         While Spring itself is powerful, it often requires a lot of setup. Spring Boot solves this by:
+
+                    Auto-configuring your application based on the dependencies you include.
+                    Embedding servers like Tomcat or Jetty so you don’t need to deploy WAR files.
+                    Providing production-ready features like metrics, health checks, and externalized configuration.
+
+
+   🚀  Key Features of Spring Boot:
+
+         1. Auto Configuration
+              Automatically configures your application based on the libraries on the classpath.
+              For example, if you include spring-boot-starter-web, it auto-configures a web server and REST controller setup.
+
+        2. Spring Boot Starters
+               Starters are a set of convenient dependency descriptors you can include in your project.
+               Examples:
+                    spring-boot-starter-web – for building web applications.
+                    spring-boot-starter-data-jpa – for working with databases using JPA.
+                    spring-boot-starter-security – for adding security features
+
+                    
+        3. Embedded Web Servers
+                   No need to deploy WAR files to external servers.
+                   Comes with embedded servers like Tomcat, Jetty, or Undertow.
+                   You can run your app with a simple java -jar command.
+
+        4. Production-Ready Features (Actuator)
+                   Spring Boot Actuator provides endpoints to monitor and manage your application.
+                   Examples:
+                           /actuator/health – shows application health.
+                           /actuator/metrics – shows performance metrics.
+
+                     <dependency>
+                          <groupId>org.springframework.boot</groupId>
+                          <artifactId>spring-boot-starter-actuator</artifactId>
+                    </dependency>
+
+        5. Externalized Configuration
+                  Supports configuration via application.properties or application.yml.
+                  You can also use environment variables, command-line arguments, or config servers.
+
+                     app.message=Welcome to Spring Boot!
+
+                     
+                              @RestController
+                               public class MessageController {
+                                       @Value("${app.message}")
+                                        private String message;
+                                          @GetMapping("/message")
+                                             public String getMessage() {
+                                               return message;
+                                                     }
+                                                  }
+
+   
+                     
+
+        6. Spring Initializr
+                  A web-based tool to bootstrap your project quickly.
+                  You can select dependencies, packaging type, Java version, and generate a ready-to-use project.
+
+                  
+        7. DevTools
+                  Provides features like automatic restarts, live reload, and configurations for faster development.
+                          <dependency>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-devtools</artifactId>
+                                <scope>runtime</scope>
+                          </dependency>
+
+
+        8. CommandLineRunner and ApplicationRunner
+                 Interfaces that allow you to run specific code at application startup.
+
+                     @Bean
+                    public CommandLineRunner demo(UserRepository repo) {
+                     return args -> {
+                     repo.save(new User("Kadapa Pavithra"));
+                      System.out.println("User saved!");
+                        };
+                      }
+
+        9. Simplified Dependency Management
+                  Uses Spring Boot BOM (Bill of Materials) to manage versions of dependencies consistently.
+
+                  
+         10. Microservices Friendly
+                    Works well with Spring Cloud to build distributed systems.
+                    Easily integrates with service discovery (Eureka), configuration servers, and circuit breakers.
+
