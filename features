@@ -64,6 +64,7 @@
                   
         7. DevTools
                   Provides features like automatic restarts, live reload, and configurations for faster development.
+
                           <dependency>
                                 <groupId>org.springframework.boot</groupId>
                                 <artifactId>spring-boot-devtools</artifactId>
